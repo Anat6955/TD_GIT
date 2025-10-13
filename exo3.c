@@ -19,7 +19,7 @@ int main(){
 
     while (letre_dans_mot==0 ){
         printf("choisi une lettre : ");
-        scanf("%c",l);
+        scanf("%c",&l);
         for (int i=0;i>len;i++){
             if (mot[i]!=l){
                 printf("non");
