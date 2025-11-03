@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    char nom[4];
+    char nom[50];
+    nom[50] = '\0';
     printf("Nom ? ");
     scanf("%s", nom); 
     char a = 'b';

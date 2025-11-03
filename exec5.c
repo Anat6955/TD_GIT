@@ -11,3 +11,4 @@ int main() {
     printf("%s\n", s);
     return 0;
 }
+/*Il faut une fin de chaine de charactere*/
