@@ -3,8 +3,16 @@
 int main() {
     if (1) {
         printf("ok\n");
-    } else
+    } 
+    else{
         printf("nope\n");
-        }
+    }
     return 0;
 }
+/*compil11.c:9:5: error: expected identifier or '(' before 'return'
+     return 0;
+     ^~~~~~
+compil11.c:10:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+ Le probleme vient du fait qu'il manque quillemée apres le else*/
