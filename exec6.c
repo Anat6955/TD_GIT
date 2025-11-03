@@ -9,3 +9,4 @@ int main() {
     printf("Bonjour %s\n", nom);
     return 0;
 }
+/*Il faut une fin de chaine de charactere*/
