@@ -2,7 +2,13 @@
 
 int main() {
     int a;
-    b = 10;
+    int b = 10;
     printf("%d\n", b);
     return 0;
 }
+/*compil3.c: In function 'main':
+compil3.c:5:5: error: 'b' undeclared (first use in this function)
+     b = 10;
+     ^
+compil3.c:5:5: note: each undeclared identifier is reported only once for each function it appears in
+Le probleme vient du fait que la variable b n'est pas declare*/
