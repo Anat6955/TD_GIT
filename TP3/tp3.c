@@ -41,26 +41,45 @@ int main(){
 
     for(int i=0; i<width;  i++){
         if (i==0 || i==width-1){
-            img[n][i]='.';
+            img[n][i]='"';
         }
         else{
             img[n][i]='S';
         }
     }
 
-    for (int j=0; j<max_height-n; j++){
+    for (int j=0; j<n/2; j++){
         for(int i=j; i<width;  i++){
-            if (i==j || i==width-j-1){
-                img[n+j][i]='.';
+            if (i==j){
+                img[n+1+j][i+1]='\'';
             }
-            else if(i>width-j-1){
-                img[n+j][i]=' ';
+
+            else if(i==width-j-1){
+                img[n+1+j][i-1]='\'';
             }
+
+            else if(i==j+2){
+                img[n+1+j][i]='V';
+            }
+
+            else if(i==width-j-2){
+                img[n+1+j][i-1]='V';
+            }
+
+            else if(i>j+2 && i<width-j-1){
+                img[n+1+j][i]='S';
+            }
+
             else{
-                img[n+j][i]='S';
+                img[n+1+j][i-1]=' ';
             }
         }
     }
+
+
+
+
+
 
 
     for (int i = 0; i< max_height; i++){
