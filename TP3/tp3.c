@@ -5,12 +5,17 @@ int main(){
     int width = 0;
     int max_height = 0;
 
-    prints("Saisissé une taille n, 5 ≤ n ≤ 10 : ");
+    prints("Saisisse une taille n, 5 ≤ n ≤ 10 : ");
     scanf("%d",&n);
 
     width = n * n;
     max_height = 3 * n - 1; 
 
-    char img[width][max_height];
-    
+    char img[150][50];
+
+    for (int i = 0; i< max_height; i++){
+        for (int j = 0; j< width; j++){
+            img[i][j]=" ";
+        }
+    }
 }
