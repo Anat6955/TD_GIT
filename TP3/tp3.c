@@ -48,7 +48,7 @@ int main(){
         }
     }
 
-    for (int j=0; j<n/2; j++){
+    for (int j=0; j<max_height; j++){
         for(int i=j; i<width;  i++){
             if (i==j){
                 img[n+1+j][i+1]='\'';
@@ -75,13 +75,6 @@ int main(){
             }
         }
     }
-
-
-
-
-
-
-
     for (int i = 0; i< max_height; i++){
         for (int j = 0; j< width; j++){
             printf("%c",img[i][j]);
