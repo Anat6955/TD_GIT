@@ -22,21 +22,44 @@ int main(){
     }
 
     for(int i=0; i<width;  i++){
-        img[n+1][i]='_';
+        img[n-1][i]='_';
     }
 
     for (int i = 0; i<= n+1; i++){
         for (int j = 0; j<i-1; j++){
-            img[i][mid+j]='A';
-            img[i][mid-j]='A';
+            img[i-2][mid+j]='A';
+            img[i-2][mid-j]='A';
         }  
     }
 
     for (int i = 0; i<= n; i++){
         for (int j = 0; j<i-1; j++){
-            img[i+1][mid+j]='S';
-            img[i+1][mid-j]='S';
+            img[i-1][mid+j]='S';
+            img[i-1][mid-j]='S';
         }  
+    }
+
+    for(int i=0; i<width;  i++){
+        if (i==0 || i==width-1){
+            img[n][i]='.';
+        }
+        else{
+            img[n][i]='S';
+        }
+    }
+
+    for (int j=0; j<max_height-n; j++){
+        for(int i=j; i<width;  i++){
+            if (i==j || i==width-j-1){
+                img[n+j][i]='.';
+            }
+            else if(i>width-j-1){
+                img[n+j][i]=' ';
+            }
+            else{
+                img[n+j][i]='S';
+            }
+        }
     }
 
 
