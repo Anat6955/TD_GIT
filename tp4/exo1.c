@@ -81,6 +81,16 @@ float calculerMoyenneGenerale(int tabNoteEleve[30][3], int nbEleve){
     return moyenne;
 }
 
+int trouverMeilleureNoteControle(int tabNoteEleve[30][3], int indiceControle, int nbEleve){
+    int meilleureNote = tabNoteEleve[0][indiceControle-1];
+    for (int i = 1; i < nbEleve; i++){
+        if (meilleureNote < tabNoteEleve[i][indiceControle-1]){
+            meilleureNote = tabNoteEleve[i][indiceControle-1];
+        }
+    }
+    return meilleureNote;
+}
+
 int main(){
     afficherMenu();
 
@@ -103,5 +113,11 @@ int main(){
     moynneGenerale = calculerMoyenneGenerale(tabNoteEleve, nbEleve);
     printf("La moyenne generale est de : %f\n", moynneGenerale);
 
+    int meilleureNoteControle = 0;
+    int indiceControle = 0;
+    printf("Choississer un controle d on vous voulez connaitre la meilleur note : ");
+    scanf("%d", &indiceControle);
+    meilleureNoteControle = trouverMeilleureNoteControle(tabNoteEleve, indiceControle, nbEleve);
+    printf("La meilleure note du controlle %d est : %d\n", indiceControle, meilleureNoteControle);
     return 0;
 }
