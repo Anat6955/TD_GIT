@@ -31,9 +31,8 @@ int saisirNombreEleves(){
     return nbEleve;
 }
 
-char saisirNote(int nbEleve){
-    printf("nombre elees %d", nbEleve);
-    char noteEleve[nbEleve][3];
+int saisirNote(int nbEleve, int tabNoteEleve[30][3]) {
+    printf("nombre eleves %d", nbEleve);
     printf("Saisir les notes de 3 controles pour %d eleves.\n", nbEleve);
     for (int i = 0; i < nbEleve; i++){
         printf("Eleve %d :\n", i+1);
@@ -46,10 +45,22 @@ char saisirNote(int nbEleve){
                 printf("Note du controle %d (0 a 20) : ", j+1);
                 scanf("%d", &note);
             }
-            noteEleve[i][j] = note;
+            tabNoteEleve[i][j] = note;
         }
     }
-    return noteEleve[nbEleve][3];
+}
+
+void afficherNote(int tabNoteEleve[30][3], int nbEleve){
+    printf("Tableau des notes:\n");
+    printf("Eleve  C1  C2  C3\n");
+    for (int i = 0; i < nbEleve; i++){
+        printf("    %d", i+1);
+        for (int j =0; j < 3; j++){
+            printf("  %d", tabNoteEleve[i][j]);
+        }
+        printf("\n");
+
+    }
 }
 
 int main(){
@@ -57,6 +68,8 @@ int main(){
     int choix=lireChoix();
     printf("Vous avez choisi : %d\n",choix);
     int nbEleve = saisirNombreEleves();
-    char noteEleve = saisirNote(nbEleve);
+    int tabNoteEleve[30][3];
+    saisirNote(nbEleve,tabNoteEleve);
+    afficherNote(tabNoteEleve, nbEleve);
     return 0;
 }
