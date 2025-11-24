@@ -13,17 +13,27 @@ void afficherMenu(){
 }
 
 int lireChoix(){
-    int choix=-1;
+    int choix = -1;
     printf("Choississer un nombre : ");
     scanf("%d",&choix);
     return choix;
 }
 
-
+int saisirNombreEleves(){
+    int nbEleve = 0;
+    while (nbEleve < 1 || nbEleve > 30){
+        printf("Combien y a t il d eleve dans votre classe (1 a 30) : ");
+        scanf("%d",&nbEleve);
+        if (nbEleve < 1 || nbEleve > 30){
+            printf("Valeur invalide.\n");
+        }
+    }
+}
 
 int main(){
     afficherMenu();
     int choix=lireChoix();
     printf("Vous avez choisi : %d\n",choix);
+    saisirNombreEleves();
     return 0;
 }
