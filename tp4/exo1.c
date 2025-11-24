@@ -28,12 +28,14 @@ int saisirNombreEleves(){
             printf("Valeur invalide.\n");
         }
     }
+    return nbEleve;
 }
 
 int main(){
     afficherMenu();
     int choix=lireChoix();
     printf("Vous avez choisi : %d\n",choix);
-    saisirNombreEleves();
+    int nbEleve = saisirNombreEleves();
+
     return 0;
 }
