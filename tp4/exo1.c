@@ -72,18 +72,36 @@ float calculerMoyenneEleve(int tabNoteEleve[30][3], int indiceEleve){
     return moyenne;
 }
 
+float calculerMoyenneGenerale(int tabNoteEleve[30][3], int nbEleve){
+    float moyenne = 0;
+    for (int i = 1; i <= nbEleve; i++){
+        moyenne += calculerMoyenneEleve(tabNoteEleve, i);
+    }
+    moyenne = moyenne / nbEleve;
+    return moyenne;
+}
+
 int main(){
     afficherMenu();
+
     int choix=lireChoix();
     printf("Vous avez choisi : %d\n",choix);
     int nbEleve = saisirNombreEleves();
+
     int tabNoteEleve[30][3];
     saisirNote(nbEleve,tabNoteEleve);
+
     afficherNote(tabNoteEleve, nbEleve);
+
     int indiceEleve = 0;
     printf("Choississer un eleve : ");
     scanf("%d", &indiceEleve);
     float moyenne = calculerMoyenneEleve(tabNoteEleve, indiceEleve);
-    printf("Sa moyenne est de : %f",moyenne);
+    printf("Sa moyenne est de : %f\n",moyenne);
+
+    float moynneGenerale = 0;
+    moynneGenerale = calculerMoyenneGenerale(tabNoteEleve, nbEleve);
+    printf("La moyenne generale est de : %f\n", moynneGenerale);
+
     return 0;
 }
