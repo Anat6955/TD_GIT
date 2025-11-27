@@ -14,10 +14,17 @@ int saisir_montant(){
 }
 
 int montant_valide(int montant){
-
+    int oui = 0;
+    if (montant<5 || montant >1000 || montant%5 != 0){
+        oui = 0;
+    }
+    else{
+        oui = 1;
+    }
+    return oui;
 }
 
-int calcul_distribution(int montant){
+void calcul_distribution(int montant){
 
 }
 
@@ -30,6 +37,11 @@ int main (){
         if (choix == 1 ){
             int montant = 0;
             montant = saisir_montant();
+            int oui = 0;
+            while (oui == 0){
+                oui = montant_valide(montant);
+            }
+            
         }
         else if (choix == 2){
             return 0;
