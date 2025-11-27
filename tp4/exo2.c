@@ -10,6 +10,7 @@ int saisir_montant(){
     int montant = 0;
     printf("Montant a retirer (il doit etre compris entre 5 est 1000 et doit etre multiple de 5) : ");
     scanf("%d",&montant);
+    return montant;
 }
 
 int montant_valide(int montant){
