@@ -20,7 +20,7 @@ int lire_choix(){
     printf("Votre choix : ");
     scanf("%d",&choix);
     if (choix != 1 && choix != 2 && choix != 3){
-        printf("Votre choix doit etre compris entre 1, 2 ou 3\n");
+        printf("⚠️ Votre choix doit etre compris entre 1, 2 ou 3.⚠️\n\n");
     }
     return choix;
 }
@@ -33,68 +33,106 @@ void initialisation_tab(int tab[]){
 }
 
 int ajouter_consommation(int tab[]){
-    int choix = 0;
-    int quantite = 0;
-    printf("Quelle categorie voulez vous modifier ?\n\n");
-    printf("1. Eau 💧\n");
-    printf("2. Cafe ☕\n");
-    printf("3. Bonbons 🍬\n");
-    printf("4. Gateau 🍰\n");
-    printf("5. Legumes 🥦\n");
-    printf("6. Fruits 🍎\n");
-    printf("7. Proteines 🍗\n");
-    printf("Votre choix : ");
-    scanf("%d",&choix);
-    switch (choix)
-    {
+    int choix = -1;
+    int quantite = -1;
+    while (choix < 0 || choix > 7){
+        printf("Quelle categorie voulez vous modifier ?\n\n");
+        printf("1. Eau 💧\n");
+        printf("2. Café ☕\n");
+        printf("3. Bonbons 🍬\n");
+        printf("4. Gateau 🍰\n");
+        printf("5. Légumes 🥦\n");
+        printf("6. Fruits 🍎\n");
+        printf("7. Protéines 🍗\n");
+        printf("Votre choix : ");
+        scanf("%d",&choix);
+        if (choix < 0 || choix > 7){
+            printf("⚠️ Votre choix doit être compris entre 1 et 7 inclus.⚠️\n\n");
+        }
+    }
+    switch (choix){
         case 1:
-            printf("Combien d unites a ajouter : ");
-            scanf("%d", &quantite);
+            while (quantite < 0){
+                printf("Combien d unites a ajouter : ");
+                scanf("%d", &quantite);
+                if (quantite < 0){
+                    printf("⚠️ La quantité doit être superieur ou égal à 0.⚠️\n");
+                }
+            }
             tab[choix-1] = tab[choix-1] + quantite;
-            printf("Consommation mise a jour.\n");
+            printf("Consommation mise a jour.\n\n");
             break;
  
         case 2:
-            printf("Combien d unites a ajouter : ");
-            scanf("%d", &quantite);
+            while (quantite < 0){
+                printf("Combien d unites a ajouter : ");
+                scanf("%d", &quantite);
+                if (quantite < 0){
+                    printf("⚠️ La quantité doit être superieur ou égal à 0.⚠️\n");
+                }
+            }
             tab[choix-1] = tab[choix-1] + quantite;
-            printf("Consommation mise a jour.\n");
+            printf("Consommation mise a jour.\n\n");
             break;
  
         case 3:
-            printf("Combien d unites a ajouter : ");
-            scanf("%d", &quantite);
+            while (quantite < 0){
+                printf("Combien d unites a ajouter : ");
+                scanf("%d", &quantite);
+                if (quantite < 0){
+                    printf("⚠️ La quantité doit être superieur ou égal à 0.⚠️\n");
+                }
+            }
             tab[choix-1] = tab[choix-1] + quantite;
-            printf("Consommation mise a jour.\n");
+            printf("Consommation mise a jour.\n\n");
             break;
  
         case 4:
-            printf("Combien d unites a ajouter : ");
-            scanf("%d", &quantite);
+            while (quantite < 0){
+                printf("Combien d unites a ajouter : ");
+                scanf("%d", &quantite);
+                if (quantite < 0){
+                    printf("⚠️ La quantité doit être superieur ou égal à 0.⚠️\n");
+                }
+            }
             tab[choix-1] = tab[choix-1] + quantite;
-            printf("Consommation mise a jour.\n");
+            printf("Consommation mise a jour.\n\n");
             break;
  
         case 5:
-            printf("Combien d unites a ajouter : ");
-            scanf("%d", &quantite);
+            while (quantite < 0){
+                printf("Combien d unites a ajouter : ");
+                scanf("%d", &quantite);
+                if (quantite < 0){
+                    printf("⚠️ La quantité doit être superieur ou égal à 0.⚠️\n");
+                }
+            }
             tab[choix-1] = tab[choix-1] + quantite;
-            printf("Consommation mise a jour.\n");
+            printf("Consommation mise a jour.\n\n");
             break;
- 
+
         case 6:
-            printf("Combien d unites a ajouter : ");
-            scanf("%d", &quantite);
+            while (quantite < 0){
+                printf("Combien d unites a ajouter : ");
+                scanf("%d", &quantite);
+                if (quantite < 0){
+                    printf("⚠️ La quantité doit être superieur ou égal à 0.⚠️\n");
+                }
+            }
             tab[choix-1] = tab[choix-1] + quantite;
-            printf("Consommation mise a jour.\n");
+            printf("Consommation mise a jour.\n\n");
             break;
-       
+
         case 7:
-            printf("Combien d unites a ajouter : ");
-            scanf("%d", &quantite);
+            while (quantite < 0){
+                printf("Combien d unites a ajouter : ");
+                scanf("%d", &quantite);
+                if (quantite < 0){
+                    printf("⚠️ La quantité doit être superieur ou égal à 0.⚠️\n");
+                }
+            }
             tab[choix-1] = tab[choix-1] + quantite;
-            printf("Consommation mise a jour.\n");
+            printf("Consommation mise a jour.\n\n");
             break;
- 
     }
 }
