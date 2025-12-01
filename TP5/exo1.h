@@ -10,5 +10,6 @@ void afficher_menu();
 int lire_choix();
 void initialisation_tab(int tab[]);
 int ajouter_consommation(int tab[]);
+void afficher_resume(int tab[]);
 
 #endif

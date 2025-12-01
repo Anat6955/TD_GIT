@@ -136,3 +136,15 @@ int ajouter_consommation(int tab[]){
             break;
     }
 }
+
+void afficher_resume(int tab[]){
+    printf("========== Resume du jour ==========\n");
+    printf("Eau       : %d\n",tab[0]);
+    printf("Cafe      : %d\n",tab[1]);
+    printf("Bonbons   : %d\n",tab[2]);
+    printf("Gateau    : %d\n",tab[3]);
+    printf("Legumes   : %d\n",tab[4]);
+    printf("Fruits    : %d\n",tab[5]);
+    printf("Proteines : %d\n",tab[6]);
+    printf("====================================\n\n");
+}
