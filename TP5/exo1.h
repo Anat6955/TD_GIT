@@ -4,5 +4,6 @@
 #include <stdio.h>
 
 void afficher_menu();
+int lire_choix();
 
 #endif
