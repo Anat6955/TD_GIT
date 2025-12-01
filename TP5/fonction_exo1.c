@@ -148,3 +148,15 @@ void afficher_resume(int tab[]){
     printf("Proteines : %d\n",tab[6]);
     printf("====================================\n\n");
 }
+
+void sauvegarder(char nom[], int tab[]){
+    FILE * f = fopen(nom,"w");
+    if (f == NULL){
+        printf("rchrc ouverture\n");
+        return ;
+    }
+    for (int i = 0; i < 7; i++){
+        fprintf(f,"%d ",tab[i]);
+    }
+    fclose(f);
+}
