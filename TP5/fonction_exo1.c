@@ -329,5 +329,38 @@ void afficher_objectif(int tab[]){
     else{
         printf("❌\n");
     }
+    printf("Score de santé du jour : %d / 100\n",calculer_score(tab));
 }
 
+int  calculer_score(int tab[]){
+    int score = 50;
+    if (tab[0] >= 8){
+        score += 10;
+    }
+    if (tab[4] >= 5){
+        score += 10;
+    }
+    if (tab[5] >= 3){
+        score += 10;
+    }
+    if (tab[6] >= 2){
+        score += 10;
+    }
+    int b = tab[2];
+    int i = 0;
+    if (b > 5 && i <= 15){
+        score -= 1;
+        b -= 1;
+        i += 1;
+    }
+        
+    int c = tab[1];
+    int j = 0;
+    if (c > 3 && j <= 20){
+        score -= 2;
+        c -= 1;
+        j += 2;
+    }
+
+    return score;
+}

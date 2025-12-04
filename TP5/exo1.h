@@ -19,4 +19,5 @@ int humeur_legume(int tab[]);
 int humeur_fruit(int tab[]);
 int affiche_barre(int val, int max);
 void afficher_objectif(int tab[]);
+int  calculer_score(int tab[]);
 #endif
