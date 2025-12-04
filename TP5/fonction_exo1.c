@@ -296,6 +296,8 @@ int affiche_barre(int val, int max){
 }
 
 void afficher_objectif(int tab[]){
+    printf("====== Objectifs du jour ======\n");
+    printf("Catégorie  objectifs  atteint ?\n\n");
     printf("1. Eau       :  8  ");
     if (tab[0] >=  8){
         printf("✅\n");
@@ -328,3 +330,4 @@ void afficher_objectif(int tab[]){
         printf("❌\n");
     }
 }
+
