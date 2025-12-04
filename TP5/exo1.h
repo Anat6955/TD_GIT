@@ -14,4 +14,7 @@ int ajouter_consommation(int tab[]);
 void afficher_resume(int tab[]);
 int sauvegarder(char nom[], int tab[]);
 int charger(char nom[], int tab[]);
+int humeur_bonbon(int tab[]);
+int humeur_legume(int tab[]);
+int humeur_fruit(int tab[]);
 #endif

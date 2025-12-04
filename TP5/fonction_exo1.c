@@ -139,13 +139,61 @@ int ajouter_consommation(int tab[]){
 
 void afficher_resume(int tab[]){
     printf("========== Resume du jour ==========\n");
-    printf("Eau       : %d\n",tab[0]);
-    printf("Cafe      : %d\n",tab[1]);
-    printf("Bonbons   : %d\n",tab[2]);
-    printf("Gateau    : %d\n",tab[3]);
-    printf("Legumes   : %d\n",tab[4]);
-    printf("Fruits    : %d\n",tab[5]);
-    printf("Proteines : %d\n",tab[6]);
+    printf("Eau       : %d  💧\n",tab[0]);
+    printf("Cafe      : %d  ☕\n",tab[1]);
+    printf("Bonbons   : %d  🍬   ",tab[2]);
+    int b = humeur_bonbon(tab);
+    switch (b)
+    {
+    case 0:
+        printf("😇\n");
+        break;
+    case 1:
+        printf("🙂\n");
+        break;
+    case 2:
+        printf("😕\n");
+        break;
+    case 3:
+        printf("😈\n");
+        break;
+    }
+    printf("Gateau    : %d  🍰\n",tab[3]);
+    printf("Legumes   : %d  🥦   ",tab[4]);
+    int l = humeur_legume(tab);
+    switch (l)
+    {
+    case 0:
+        printf("😭\n");
+        break;
+    case 1:
+        printf("🙂\n");
+        break;
+    case 2:
+        printf("😎\n");
+        break;
+    case 3:
+        printf("😎\n");
+        break;
+    }
+    printf("Fruits    : %d  🍎   ",tab[5]);
+    int f = humeur_fruit(tab);
+    switch (f)
+    {
+    case 0:
+        printf("😢\n");
+        break;
+    case 1:
+        printf("🙂\n");
+        break;
+    case 2:
+        printf("😀\n");
+        break;
+    case 3:
+        printf("😀\n");
+        break;
+    }
+    printf("Proteines : %d  🍗\n",tab[6]);
     printf("====================================\n\n");
 }
 
@@ -168,4 +216,52 @@ int charger(char nom[], int tab[]){
     
     fclose(f);
     return 1;
+}
+
+int humeur_bonbon(int tab[]){
+    int n = tab [2];
+    if (n <= 3){
+        return 0;
+    }
+    else if (n <= 7){
+        return 1;
+    }
+    else if (n <= 12){
+        return 2;
+    }
+    else{
+        return 3;
+    }
+}
+
+int humeur_legume(int tab[]){
+    int n = tab [4];
+    if (n <= 3){
+        return 0;
+    }
+    else if (n <= 7){
+        return 1;
+    }
+    else if (n <= 12){
+        return 2;
+    }
+    else{
+        return 3;
+    }
+}
+
+int humeur_fruit(int tab[]){
+    int n = tab [5];
+    if (n <= 3){
+        return 0;
+    }
+    else if (n <= 7){
+        return 1;
+    }
+    else if (n <= 12){
+        return 2;
+    }
+    else{
+        return 3;
+    }
 }
