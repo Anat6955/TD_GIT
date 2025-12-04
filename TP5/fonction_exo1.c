@@ -12,7 +12,8 @@ void afficher_menu(){
     printf("==============================\n");
     printf("1. Ajouter une consommation\n");
     printf("2. Afficher le resume deu jour\n");
-    printf("3. Sauvegarder et quitter\n");
+    printf("3. Afficher les objectifs et le score\n");
+    printf("4. Sauvegarder et quitter\n");
 }
 
 int lire_choix(){
@@ -37,12 +38,12 @@ int ajouter_consommation(int tab[]){
     int quantite = -1;
     while (choix < 0 || choix > 7){
         printf("Quelle categorie voulez vous modifier ?\n\n");
-        printf("1. Eau 💧\n");
-        printf("2. Café ☕\n");
-        printf("3. Bonbons 🍬\n");
-        printf("4. Gateau 🍰\n");
-        printf("5. Légumes 🥦\n");
-        printf("6. Fruits 🍎\n");
+        printf("1. Eau       💧\n");
+        printf("2. Café      ☕\n");
+        printf("3. Bonbons   🍬\n");
+        printf("4. Gateau    🍰\n");
+        printf("5. Légumes   🥦\n");
+        printf("6. Fruits    🍎\n");
         printf("7. Protéines 🍗\n");
         printf("Votre choix : ");
         scanf("%d",&choix);
@@ -292,4 +293,38 @@ int affiche_barre(int val, int max){
     }
     printf("\n");
 
+}
+
+void afficher_objectif(int tab[]){
+    printf("1. Eau       :  8  ");
+    if (tab[0] >=  8){
+        printf("✅\n");
+    }
+    else{
+        printf("❌\n");
+    }
+    printf("2. Café      :  -  (Pas d'objectif)\n");
+    printf("3. Bonbons   :  -  (Pas d'objectif)\n");
+    printf("4. Gateau    :  -  (Pas d'objectif)\n");
+    printf("5. Légumes   :  5  ");
+    if (tab[4] >=  5){
+        printf("✅\n");
+    }
+    else{
+        printf("❌\n");
+    }
+    printf("6. Fruits    :  3  ");
+    if (tab[5] >=  3){
+        printf("✅\n");
+    }
+    else{
+        printf("❌\n");
+    }
+    printf("7. Protéines :  2  ");
+    if (tab[6] >=  2){
+        printf("✅\n");
+    }
+    else{
+        printf("❌\n");
+    }
 }

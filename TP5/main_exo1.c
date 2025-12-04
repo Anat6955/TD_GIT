@@ -8,7 +8,7 @@ int main(){
         printf("\n  ⚠️  Aucune sauvegarde trouvée. ⚠️\n\n");
     }
     int choix = 0;
-    while (choix != 3){
+    while (choix != 4){
         afficher_menu();
         choix = lire_choix();
 
@@ -19,6 +19,9 @@ int main(){
             afficher_resume(tab);
         }
         else if (choix == 3){
+            afficher_objectif(tab);
+        }
+        else if (choix == 4){
             sauvegarder("consommation.txt", tab);
         }
     }
