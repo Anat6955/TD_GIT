@@ -139,61 +139,68 @@ int ajouter_consommation(int tab[]){
 
 void afficher_resume(int tab[]){
     printf("========== Resume du jour ==========\n");
-    printf("Eau       : %d  💧\n",tab[0]);
-    printf("Cafe      : %d  ☕\n",tab[1]);
+    printf("Eau       : %d  💧   ",tab[0]);
+    affiche_barre(tab[0], 10);
+    printf("Cafe      : %d  ☕   ",tab[1]);
+    affiche_barre(tab[1], 10);
     printf("Bonbons   : %d  🍬   ",tab[2]);
     int b = humeur_bonbon(tab);
     switch (b)
     {
     case 0:
-        printf("😇\n");
+        printf("😇   ");
         break;
     case 1:
-        printf("🙂\n");
+        printf("🙂   ");
         break;
     case 2:
-        printf("😕\n");
+        printf("😕   ");
         break;
     case 3:
-        printf("😈\n");
+        printf("😈   ");
         break;
     }
-    printf("Gateau    : %d  🍰\n",tab[3]);
+    affiche_barre(tab[2], 10);
+    printf("Gateau    : %d  🍰   ",tab[3]);
+    affiche_barre(tab[3], 10);
     printf("Legumes   : %d  🥦   ",tab[4]);
     int l = humeur_legume(tab);
     switch (l)
     {
     case 0:
-        printf("😭\n");
+        printf("😭   ");
         break;
     case 1:
-        printf("🙂\n");
+        printf("🙂   ");
         break;
     case 2:
-        printf("😎\n");
+        printf("😎   ");
         break;
     case 3:
-        printf("😎\n");
+        printf("😎   ");
         break;
     }
+    affiche_barre(tab[4], 10);
     printf("Fruits    : %d  🍎   ",tab[5]);
     int f = humeur_fruit(tab);
     switch (f)
     {
     case 0:
-        printf("😢\n");
+        printf("😢   ");
         break;
     case 1:
-        printf("🙂\n");
+        printf("🙂   ");
         break;
     case 2:
-        printf("😀\n");
+        printf("😀   ");
         break;
     case 3:
-        printf("😀\n");
+        printf("😀   ");
         break;
     }
-    printf("Proteines : %d  🍗\n",tab[6]);
+    affiche_barre(tab[5], 10);
+    printf("Proteines : %d  🍗   ",tab[6]);
+    affiche_barre(tab[6], 10);
     printf("====================================\n\n");
 }
 
@@ -264,4 +271,25 @@ int humeur_fruit(int tab[]){
     else{
         return 3;
     }
+}
+
+int affiche_barre(int val, int max){
+    if (max <=  0){
+        max = 1;
+    }
+    if (max < val){
+        val = max;
+    }
+    int case_affiche = (val*10)/max;
+    for (int i = 0; i < 10; i++){
+        if (case_affiche > 0){
+            printf("█");
+            case_affiche -= 1;          
+        }
+        else{
+            printf("░");
+        }
+    }
+    printf("\n");
+
 }

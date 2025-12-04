@@ -17,4 +17,5 @@ int charger(char nom[], int tab[]);
 int humeur_bonbon(int tab[]);
 int humeur_legume(int tab[]);
 int humeur_fruit(int tab[]);
+int affiche_barre(int val, int max);
 #endif
