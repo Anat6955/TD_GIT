@@ -149,14 +149,23 @@ void afficher_resume(int tab[]){
     printf("====================================\n\n");
 }
 
-void sauvegarder(char nom[], int tab[]){
-    FILE * f = fopen(nom,"w");
+int sauvegarder(char nom[], int tab[]){
+    FILE * f = fopen(nom,"w+");
     if (f == NULL){
-        printf("rchrc ouverture\n");
-        return ;
+        return 0;
     }
-    for (int i = 0; i < 7; i++){
-        fprintf(f,"%d ",tab[i]);
-    }
+    fprintf(f,"%d %d %d %d %d %d %d", tab[0], tab[1], tab[2], tab[3], tab[4], tab[5], tab[6]);
     fclose(f);
+    return 1;
+}
+
+int charger(char nom[], int tab[]){
+    FILE * f = fopen(nom,"r");
+    if (f == NULL){
+        return 0;
+    }
+    fscanf(f,"%d %d %d %d %d %d %d", &tab[0], &tab[1], &tab[2], &tab[3], &tab[4], &tab[5], &tab[6]);
+    
+    fclose(f);
+    return 1;
 }

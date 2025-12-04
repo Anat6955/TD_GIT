@@ -4,7 +4,7 @@ int main(){
     UTF8();
     int tab[7];
     initialisation_tab(tab);
-    
+    charger("consommation.txt", tab);
     int choix = 0;
     while (choix != 3){
         afficher_menu();
@@ -17,7 +17,7 @@ int main(){
             afficher_resume(tab);
         }
         else if (choix == 3){
-            sauvegarder("consommation", tab);
+            sauvegarder("consommation.txt", tab);
         }
     }
 
