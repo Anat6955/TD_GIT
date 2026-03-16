@@ -139,6 +139,34 @@ void melanger_chansons(Chanson chansons[], int n) {
         chansons[j] = temp;
     }
 }
+
+
+ListeJoueur* charger_scores(const char *filename) {
+    FILE *f = fopen(filename, "r");
+    if (!f) return NULL; // fichier vide ou inexistant
+
+    ListeJoueur *head = NULL;
+    char line[512];
+
+    while (fgets(line, sizeof(line), f)) {
+        trim_newline(line);
+
+        char *nom = strtok(line, ";");
+        char *score_str = strtok(NULL, ";");
+        if (!nom || !score_str) continue;
+
+        ListeJoueur *n = malloc(sizeof(ListeJoueur));
+        strcpy(n->nom, nom);
+        n->score_max = atoi(score_str);
+
+        n->suivant = head;
+        head = n;
+    }
+
+    fclose(f);
+    return head;
+}
+
 /* -------------------------------------------------- */
 /* PROGRAMME PRINCIPAL                                */
 /* -------------------------------------------------- */
