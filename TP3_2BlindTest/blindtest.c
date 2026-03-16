@@ -159,20 +159,27 @@ int main() {
     printf("Nombre de chansons chargees : %d\n\n", nb_chansons);
     int score = 0;
     for (int i = 0; i < nb_chansons; i++) {
-
+        int debut = rand()%30;
         printf("Lecture de la chanson %d\n", i + 1);
-        printf("%s - %s\n", chansons[i].artiste, chansons[i].titre);
 
-        play_song_excerpt_at(chansons[i].nom_fichier, 10, 8);
+        play_song_excerpt_at(chansons[i].nom_fichier, debut, 8);
         
-        printf("Quelle est le titre de la musique : ");
+        printf("Quelle est le titre ou le chanteur de la musique : ");
 
         char reponse[256];
         fgets(reponse, sizeof(reponse), stdin);
         trim_newline(reponse);
 
         if(string_equals_normalized(reponse, chansons[i].titre) == 1){
+            printf("Bravo c'est le bon titre l'artiste est %s.\n",chansons[i].artiste);
             score++;
+        }
+        else if(string_equals_normalized(reponse, chansons[i].artiste) == 1){
+            printf("Bravo c'est le bon artiste le titre est .\n",chansons[i].titre);
+            score++;
+        }
+        else{
+            printf("Dommage la musique etait %s de %s.\n",chansons[i].titre,chansons[i].artiste);
         }
 
 
