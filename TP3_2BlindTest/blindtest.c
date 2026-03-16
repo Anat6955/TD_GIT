@@ -155,15 +155,16 @@ int main() {
         return 1;
     }
     melanger_chansons(chansons, nb_chansons);
-    
+
     printf("Nombre de chansons chargees : %d\n\n", nb_chansons);
 
     for (int i = 0; i < nb_chansons; i++) {
 
-        printf("Chanson %d\n", i + 1);
-        printf("Fichier : %s\n", chansons[i].nom_fichier);
-        printf("Titre   : %s\n", chansons[i].titre);
-        printf("Artiste : %s\n", chansons[i].artiste);
+        printf("Lecture de la chanson %d\n", i + 1);
+        printf("%s - %s\n", chansons[i].artiste, chansons[i].titre);
+
+        play_song_excerpt_at(chansons[i].nom_fichier, 10, 20);
+        
         printf("\n");
     }
 
