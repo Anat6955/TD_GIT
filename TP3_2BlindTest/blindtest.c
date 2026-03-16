@@ -119,6 +119,9 @@ int load_songs(char *filename, Chanson *chanson) {
 
 // TO DO
 // STOCKER LES CHANSONS
+        strcpy(chanson[count].nom_fichier, file);
+        strcpy(chanson[count].titre, title);
+        strcpy(chanson[count].artiste, artist);
 
         count++;
     }
@@ -132,6 +135,26 @@ int load_songs(char *filename, Chanson *chanson) {
 /* -------------------------------------------------- */
 
 int main() {
+    Chanson chansons[100];
+    int nb_chansons;
+
+    nb_chansons = load_songs("songs.txt", chansons);
+
+    if (nb_chansons <= 0) {
+        printf("Erreur lors du chargement des chansons.\n");
+        return 1;
+    }
+
+    printf("Nombre de chansons chargees : %d\n\n", nb_chansons);
+
+    for (int i = 0; i < nb_chansons; i++) {
+
+        printf("Chanson %d\n", i + 1);
+        printf("Fichier : %s\n", chansons[i].nom_fichier);
+        printf("Titre   : %s\n", chansons[i].titre);
+        printf("Artiste : %s\n", chansons[i].artiste);
+        printf("\n");
+    }
 
 
 

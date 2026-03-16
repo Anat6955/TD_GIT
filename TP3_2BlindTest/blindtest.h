@@ -18,10 +18,10 @@ typedef struct{
     int score;
 }Joueur;
 
-typedef struct{
+typedef struct ListeJoueur{
     char nom[25];
     int score_max;
-    ListeJoueur suivant;
+    struct ListeJoueur *suivant;
 }ListeJoueur;
 
 void trim_newline(char *s);
