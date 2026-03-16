@@ -116,9 +116,6 @@ int load_songs(char *filename, Chanson *chanson) {
             printf("Ligne ignoree dans songs.txt.\n");
             continue;
         }
-
-// TO DO
-// STOCKER LES CHANSONS
         strcpy(chanson[count].nom_fichier, file);
         strcpy(chanson[count].titre, title);
         strcpy(chanson[count].artiste, artist);
@@ -130,6 +127,18 @@ int load_songs(char *filename, Chanson *chanson) {
     return count;
 }
 
+
+void melanger_chansons(Chanson chansons[], int n) {
+
+    for (int i = n - 1; i > 0; i--) {
+
+        int j = rand() % (i + 1);
+
+        Chanson temp = chansons[i];
+        chansons[i] = chansons[j];
+        chansons[j] = temp;
+    }
+}
 /* -------------------------------------------------- */
 /* PROGRAMME PRINCIPAL                                */
 /* -------------------------------------------------- */
@@ -137,6 +146,7 @@ int load_songs(char *filename, Chanson *chanson) {
 int main() {
     Chanson chansons[100];
     int nb_chansons;
+    srand(time(NULL));
 
     nb_chansons = load_songs("songs.txt", chansons);
 
@@ -144,7 +154,8 @@ int main() {
         printf("Erreur lors du chargement des chansons.\n");
         return 1;
     }
-
+    melanger_chansons(chansons, nb_chansons);
+    
     printf("Nombre de chansons chargees : %d\n\n", nb_chansons);
 
     for (int i = 0; i < nb_chansons; i++) {
