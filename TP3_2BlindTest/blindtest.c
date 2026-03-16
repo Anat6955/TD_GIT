@@ -157,17 +157,28 @@ int main() {
     melanger_chansons(chansons, nb_chansons);
 
     printf("Nombre de chansons chargees : %d\n\n", nb_chansons);
-
+    int score = 0;
     for (int i = 0; i < nb_chansons; i++) {
 
         printf("Lecture de la chanson %d\n", i + 1);
         printf("%s - %s\n", chansons[i].artiste, chansons[i].titre);
 
-        play_song_excerpt_at(chansons[i].nom_fichier, 10, 20);
+        play_song_excerpt_at(chansons[i].nom_fichier, 10, 8);
         
+        printf("Quelle est le titre de la musique : ");
+
+        char reponse[256];
+        fgets(reponse, sizeof(reponse), stdin);
+        trim_newline(reponse);
+
+        if(string_equals_normalized(reponse, chansons[i].titre) == 1){
+            score++;
+        }
+
+
         printf("\n");
     }
-
+    printf("%d",score);
 
 
     return 0;
