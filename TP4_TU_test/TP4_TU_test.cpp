@@ -13,24 +13,25 @@ namespace TP4TUtest
 	{
 	public:
 		
-		TEST_METHOD(TestContientMajuscule)
+		TEST_METHOD(TestDivisionExact)
 		{
-			Assert::AreEqual(contientMajuscule("bonjour"), 0);
+			Assert::AreEqual(divisionExacte(10,2), 1);
 		}
 
-		TEST_METHOD(TestContientMajuscule2)
+		TEST_METHOD(TestDivisionExact2)
 		{
-			Assert::AreEqual(contientMajuscule("Bonjour"), 1);
+			Assert::AreEqual(divisionExacte(10, 3), 0);
 		}
 
-		TEST_METHOD(TestContientMajuscule3)
+		TEST_METHOD(TestDivisionExact3)
 		{
-			Assert::AreEqual(contientMajuscule("ABC"), 1);
+			Assert::AreEqual(divisionExacte(0, 5), 1);
 		}
 
-		TEST_METHOD(TestContientMajuscule4)
+		TEST_METHOD(TestDivisionExact4)
 		{
-			Assert::AreEqual(contientMajuscule(NULL), 0);
+			Assert::AreEqual(divisionExacte(10, 10), 1);
 		}
 	};
 }
+// car la division euclidienne par zero n'est pas possible
