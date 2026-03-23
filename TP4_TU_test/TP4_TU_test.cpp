@@ -13,27 +13,24 @@ namespace TP4TUtest
 	{
 	public:
 		
-		TEST_METHOD(TestFactorielle)
+		TEST_METHOD(TestContientMajuscule)
 		{
-			Assert::AreEqual(factorielle(0), 1);
+			Assert::AreEqual(contientMajuscule("bonjour"), 1);
 		}
 
-		TEST_METHOD(TestFactorielle2)
+		TEST_METHOD(TestContientMajuscule2)
 		{
-			Assert::AreEqual(factorielle(1), 1);
+			Assert::AreEqual(contientMajuscule("Bonjour"), 1);
 		}
 
-		TEST_METHOD(TestFactorielle3)
+		TEST_METHOD(TestContientMajuscule3)
 		{
-			Assert::AreEqual(factorielle(4), 24);
+			Assert::AreEqual(contientMajuscule("ABC"), 1);
 		}
 
-		TEST_METHOD(TestFactorielle4)
+		TEST_METHOD(TestContientMajuscule4)
 		{
-			Assert::AreEqual(factorielle(-5), 120);
+			Assert::AreEqual(contientMajuscule(""), 0);
 		}
 	};
 }
-
-// Non car sa ferait une bloucle infini
-// il sufit de faire une vérification au début de la fonction
