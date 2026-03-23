@@ -15,7 +15,7 @@ namespace TP4TUtest
 		
 		TEST_METHOD(TestContientMajuscule)
 		{
-			Assert::AreEqual(contientMajuscule("bonjour"), 1);
+			Assert::AreEqual(contientMajuscule("bonjour"), 0);
 		}
 
 		TEST_METHOD(TestContientMajuscule2)
@@ -30,7 +30,7 @@ namespace TP4TUtest
 
 		TEST_METHOD(TestContientMajuscule4)
 		{
-			Assert::AreEqual(contientMajuscule(""), 0);
+			Assert::AreEqual(contientMajuscule(NULL), 0);
 		}
 	};
 }
