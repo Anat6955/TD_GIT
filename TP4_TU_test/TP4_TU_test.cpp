@@ -30,9 +30,10 @@ namespace TP4TUtest
 
 		TEST_METHOD(TestFactorielle4)
 		{
-			Assert::AreEqual(factorielle(5), 120);
+			Assert::AreEqual(factorielle(-5), 120);
 		}
 	};
 }
 
 // Non car sa ferait une bloucle infini
+// il sufit de faire une vérification au début de la fonction
