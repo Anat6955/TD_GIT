@@ -13,24 +13,24 @@ namespace TP4TUtest
 	{
 	public:
 		
-		TEST_METHOD(TestMax)
+		TEST_METHOD(TestFactorielle)
 		{
-			Assert::AreEqual(max2(5,3), 5);
+			Assert::AreEqual(factorielle(0), 1);
 		}
 
-		TEST_METHOD(TestMax2)
+		TEST_METHOD(TestFactorielle2)
 		{
-			Assert::AreEqual(max2(3, 5), 5);
+			Assert::AreEqual(factorielle(1), 1);
 		}
 
-		TEST_METHOD(TestMax3)
+		TEST_METHOD(TestFactorielle3)
 		{
-			Assert::AreEqual(max2(-1, -8), -1);
+			Assert::AreEqual(factorielle(4), 24);
 		}
 
-		TEST_METHOD(TestMax4)
+		TEST_METHOD(TestFactorielle4)
 		{
-			Assert::AreEqual(max2(4, 4), 4);
+			Assert::AreEqual(factorielle(5), 120);
 		}
 	};
 }
