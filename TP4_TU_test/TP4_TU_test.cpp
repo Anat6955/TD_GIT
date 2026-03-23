@@ -15,23 +15,22 @@ namespace TP4TUtest
 		
 		TEST_METHOD(TestDivisionExact)
 		{
-			Assert::AreEqual(divisionExacte(10,2), 1);
+			int tab[] = {1, 2, 3};
+			Assert::AreEqual(sommeTableau(tab, 3), 6);
 		}
 
 		TEST_METHOD(TestDivisionExact2)
 		{
-			Assert::AreEqual(divisionExacte(10, 3), 0);
+			int tab2[] = { 5 };
+			Assert::AreEqual(sommeTableau(tab2, 1), 5);
 		}
 
 		TEST_METHOD(TestDivisionExact3)
 		{
-			Assert::AreEqual(divisionExacte(0, 5), 1);
+			int tab3[] = { -1, 4 ,-3 };
+			Assert::AreEqual(sommeTableau(tab3, 3), 0);
 		}
 
-		TEST_METHOD(TestDivisionExact4)
-		{
-			Assert::AreEqual(divisionExacte(10, 0), 0);
-		}
+
 	};
 }
-// car la division euclidienne par zero n'est pas possible
