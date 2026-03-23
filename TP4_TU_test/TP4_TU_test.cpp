@@ -30,7 +30,7 @@ namespace TP4TUtest
 
 		TEST_METHOD(TestDivisionExact4)
 		{
-			Assert::AreEqual(divisionExacte(10, 10), 1);
+			Assert::AreEqual(divisionExacte(10, 0), 0);
 		}
 	};
 }
