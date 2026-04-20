@@ -18,7 +18,7 @@ typedef struct {
 void saisir(Medicament Tab[],int N);
 void echanger(Medicament *a, Medicament *b);
 void triParDate(Medicament Tab[],int N);
-
+int rechercheDichotomique(Medicament Tab[], char val[], int N);
 
 
 

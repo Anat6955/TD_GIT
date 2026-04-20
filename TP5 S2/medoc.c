@@ -46,3 +46,24 @@ void triParDate(Medicament Tab[],int N) {
 }
 
 
+
+
+int rechercheDichotomique(Medicament Tab[], char val[], int N) {
+    int debut = 0, fin = N - 1;
+
+    while(debut <= fin) {
+        int mil = (debut + fin) / 2;
+
+        int cmp = strcmp(val, Tab[mil].nom);
+
+        if(cmp == 0) {
+            return mil;
+        } else if(cmp > 0) {
+            debut = mil + 1;
+        } else {
+            fin = mil - 1;
+        }
+    }
+    return -1;
+}
+
