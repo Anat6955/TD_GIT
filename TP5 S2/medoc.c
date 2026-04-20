@@ -76,3 +76,15 @@ void triParNom(Medicament Tab[],int N){
         }
     }
 }
+
+Medicament plusCher(Medicament Tab[],int N) {
+    Medicament max = Tab[0];
+
+    for(int i = 1; i < N; i++) {
+        if(Tab[i].prix > max.prix) {
+            max = Tab[i];
+        }
+    }
+
+    return max;
+}
